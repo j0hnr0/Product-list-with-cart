@@ -1,3 +1,14 @@
 @import "tailwindcss";
 
+.font-red-hat-bold {
+    font-family: var(--red-hat-text-bold);
+}
+
+.font-red-hat-semibold {
+    font-family: var(--red-hat-text-semibold);
+}
+
+.font-red-hat-regular {
+    font-family: var(--red-hat-text-regular);
+}
 
