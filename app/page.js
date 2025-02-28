@@ -1,7 +1,9 @@
-import Image from "next/image";
+import ProductSection from "./_components/product-section";
 
 export default function Home() {
   return (
-    <h1>WORKED!</h1>
+    <main>
+      <ProductSection />
+    </main>
   );
 }
