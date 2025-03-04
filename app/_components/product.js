@@ -5,9 +5,9 @@ export default function Product({ imageURL, category, name, price, alt }) {
     <div>
       <div className="relative">
         <Image
-          src="/images/image-waffle-desktop.jpg"
+          src={imageURL}
           className="w-full h-auto max-w-[250px] rounded-lg"
-          alt="test"
+          alt={alt}
           width={250}
           height={240}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -24,6 +24,16 @@ export default function Product({ imageURL, category, name, price, alt }) {
           </h3>
         </div>
       </div>
+
+      <h4 className="mt-9 font-red-hat-regular text-sm text-[#87635A]">
+        {category}
+      </h4>
+      <h3 className="font-red-hat-semibold text-base text-[#260F08]">
+        {name}
+      </h3>
+      <h3 className="font-red-hat-semibold text-base text-[#C73B0F]">
+        {price}
+      </h3>
     </div>
   );
 }

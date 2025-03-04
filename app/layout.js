@@ -1,19 +1,20 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Providers from "./_components/providers";
 
 const redHatBold = localFont({
   src: "../public/fonts/RedHatText-Bold.ttf",
-  variable: "--red-hat-text-bold"
+  variable: "--red-hat-text-bold",
 });
 
 const redHatSemiBold = localFont({
   src: "../public/fonts/RedHatText-SemiBold.ttf",
-  variable: "--red-hat-text-semibold"
+  variable: "--red-hat-text-semibold",
 });
 
 const redHatRegular = localFont({
   src: "../public/fonts/RedHatText-Regular.ttf",
-  variable: "--red-hat-text-regular"
+  variable: "--red-hat-text-regular",
 });
 
 export const metadata = {
@@ -26,8 +27,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${redHatBold.variable} ${redHatSemiBold.variable} ${redHatRegular.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={`${redHatBold.variable} ${redHatSemiBold.variable} ${redHatRegular.variable}`}
+    >
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
