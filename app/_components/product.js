@@ -32,7 +32,7 @@ export default function Product({ imageURL, category, name, price, alt }) {
         {name}
       </h3>
       <h3 className="font-red-hat-semibold text-base text-[#C73B0F]">
-        {price}
+        ${price}
       </h3>
     </div>
   );
