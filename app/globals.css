@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+    --color-custom-red: #C73B0F;
+}
+
 .font-red-hat-bold {
     font-family: var(--red-hat-text-bold);
 }
