@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${redHatBold.variable} ${redHatSemiBold.variable} ${redHatRegular.variable}`}
     >
-      <body>
+      <body className="bg-custom-white">
         <Providers>{children}</Providers>
       </body>
     </html>
