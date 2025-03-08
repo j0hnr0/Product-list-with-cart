@@ -6,13 +6,28 @@ import { useState } from "react";
 
 export default function AddToCartButton() {
   const [isClicked, setIsClicked] = useState(false);
+  const [quantity, setQuantity] = useState(0);
 
   function buyProduct() {
     setIsClicked(true);
+
+    if (quantity === 0) {
+      setQuantity((prev) => prev + 1);
+    }
   }
 
-  function reduceAmountClick() {
-    setIsClicked(false);
+  function reduceQuantity() {
+    if (quantity === 1) {
+      setIsClicked(false);
+    }
+
+    if (quantity >= 1) {
+      setQuantity((prev) => prev - 1);
+    }
+  }
+
+  function addQuantity() {
+    setQuantity((prev) => prev + 1);
   }
 
   return (
@@ -34,7 +49,7 @@ export default function AddToCartButton() {
           <div
             onClick={(e) => {
               e.stopPropagation();
-              reduceAmountClick();
+              reduceQuantity();
             }}
             className="group flex justify-center items-center rounded-full bg-transparent hover:bg-white border-[1px] border-white w-5 h-5 cursor-pointer"
           >
@@ -53,9 +68,15 @@ export default function AddToCartButton() {
           </div>
 
           <h3 className="font-red-hat-semibold font-semibold text-sm text-white">
-            1
+            {quantity}
           </h3>
-          <div className="group flex justify-center items-center rounded-full bg-transparent hover:bg-white border-[1px] border-white w-5 h-5 cursor-pointer">
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              addQuantity();
+            }}
+            className="group flex justify-center items-center rounded-full bg-transparent hover:bg-white border-[1px] border-white w-5 h-5 cursor-pointer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="10"

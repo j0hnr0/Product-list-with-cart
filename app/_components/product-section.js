@@ -18,7 +18,7 @@ export default function ProductSection() {
   });
 
   return (
-    <section className="max-w-[800px]">
+    <section className="max-w-[800px] mt-8">
       <h1 className="text-[40px] font-bold font-red-hat-bold">Desserts</h1>
       {isLoading && (
         <div className="flex justify-center">
