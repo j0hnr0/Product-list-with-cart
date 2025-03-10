@@ -2,34 +2,15 @@
 
 import Image from "next/image";
 import AddToCartButton from "./add-to-cart-btn";
-import { useState } from "react";
 import clsx from "clsx";
+import { useDispatch, useSelector } from "react-redux";
+import { buyProduct, reduceQuantity, addQuantity } from "../store/features/counterSlice";
 
 export default function Product({ imageURL, category, name, price, alt }) {
-  const [isClicked, setIsClicked] = useState(false);
-  const [quantity, setQuantity] = useState(0);
+  const isClicked = useSelector((state) => state.cart.isClicked);
+  const quantity = useSelector((state) => state.cart.quantity);
 
-  function buyProduct() {
-    setIsClicked(true);
-
-    if (quantity === 0) {
-      setQuantity((prev) => prev + 1);
-    }
-  }
-
-  function reduceQuantity() {
-    if (quantity === 1) {
-      setIsClicked(false);
-    }
-
-    if (quantity >= 1) {
-      setQuantity((prev) => prev - 1);
-    }
-  }
-
-  function addQuantity() {
-    setQuantity((prev) => prev + 1);
-  }
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -48,17 +29,17 @@ export default function Product({ imageURL, category, name, price, alt }) {
         <AddToCartButton
           isClicked={isClicked}
           quantity={quantity}
-          buyProduct={buyProduct}
-          reduceQuantity={reduceQuantity}
-          addQuantity={addQuantity}
+          buyProduct={() => dispatch(buyProduct())}
+          reduceQuantity={() => dispatch(reduceQuantity())}
+          addQuantity={() => dispatch(addQuantity())}
         />
       </div>
 
       <h4 className="mt-9 font-red-hat-regular text-sm text-[#87635A]">
         {category}
       </h4>
-      <h3 className="font-red-hat-semibold text-base text-[#260F08]">{name}</h3>
-      <h3 className="font-red-hat-semibold text-base text-[#C73B0F]">
+      <h3 className="font-red-hat-semibold text-base text-custom-black">{name}</h3>
+      <h3 className="font-red-hat-semibold text-base text-custom-red">
         ${price.toFixed(2)}
       </h3>
     </div>

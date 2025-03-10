@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Providers from "./_components/providers";
+import ReduxProvider from "./_components/redux-provider";
 
 const redHatBold = localFont({
   src: "../public/fonts/RedHatText-Bold.ttf",
@@ -32,7 +33,9 @@ export default function RootLayout({ children }) {
       className={`${redHatBold.variable} ${redHatSemiBold.variable} ${redHatRegular.variable}`}
     >
       <body className="bg-custom-white">
-        <Providers>{children}</Providers>
+        <ReduxProvider>
+          <Providers>{children}</Providers>
+        </ReduxProvider>
       </body>
     </html>
   );
