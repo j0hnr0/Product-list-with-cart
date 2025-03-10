@@ -1,35 +1,13 @@
-"use client";
-
 import clsx from "clsx";
 import Image from "next/image";
-import { useState } from "react";
 
-export default function AddToCartButton() {
-  const [isClicked, setIsClicked] = useState(false);
-  const [quantity, setQuantity] = useState(0);
-
-  function buyProduct() {
-    setIsClicked(true);
-
-    if (quantity === 0) {
-      setQuantity((prev) => prev + 1);
-    }
-  }
-
-  function reduceQuantity() {
-    if (quantity === 1) {
-      setIsClicked(false);
-    }
-
-    if (quantity >= 1) {
-      setQuantity((prev) => prev - 1);
-    }
-  }
-
-  function addQuantity() {
-    setQuantity((prev) => prev + 1);
-  }
-
+export default function AddToCartButton({
+  isClicked,
+  quantity,
+  buyProduct,
+  reduceQuantity,
+  addQuantity,
+}) {
   return (
     <button
       type="button"
