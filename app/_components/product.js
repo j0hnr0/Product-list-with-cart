@@ -4,13 +4,14 @@ import Image from "next/image";
 import AddToCartButton from "./add-to-cart-btn";
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
-import { buyProduct, reduceQuantity, addQuantity } from "../store/features/counterSlice";
+import { buyProduct, reduceQuantity, addQuantity } from "../store/features/cartSlice";
 
-export default function Product({ imageURL, category, name, price, alt }) {
-  const isClicked = useSelector((state) => state.cart.isClicked);
-  const quantity = useSelector((state) => state.cart.quantity);
-
+export default function Product({ id, imageURL, category, name, price, alt }) {
   const dispatch = useDispatch();
+  
+  const productInCart = useSelector((state) => state.cart.items[id]);
+  const isClicked = productInCart ? productInCart.isClicked : false;
+  const quantity = productInCart ? productInCart.quantity : 0;
 
   return (
     <div>
@@ -29,9 +30,9 @@ export default function Product({ imageURL, category, name, price, alt }) {
         <AddToCartButton
           isClicked={isClicked}
           quantity={quantity}
-          buyProduct={() => dispatch(buyProduct())}
-          reduceQuantity={() => dispatch(reduceQuantity())}
-          addQuantity={() => dispatch(addQuantity())}
+          buyProduct={() => dispatch(buyProduct(id))}
+          reduceQuantity={() => dispatch(reduceQuantity(id))}
+          addQuantity={() => dispatch(addQuantity(id))}
         />
       </div>
 

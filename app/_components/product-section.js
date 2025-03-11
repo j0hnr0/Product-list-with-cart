@@ -33,9 +33,10 @@ export default function ProductSection() {
 
       {data && (
         <div className="mt-8 flex gap-6 flex-wrap">
-          {data.map((item) => (
+          {data.map((item, index) => (
             <Product
               key={item.name}
+              id={index}
               imageURL={item.image.desktop}
               category={item.category}
               name={item.name}
