@@ -10,13 +10,15 @@ const cartSlice = createSlice({
     buyProduct: (state, action) => {
       const productId = action.payload;
 
-      if (!state.items[productId]) {
+      if (
+        state.items[productId] === undefined ||
+        state.items[productId].quantity === 0
+      ) {
         state.items[productId] = {};
+        state.items[productId].isClicked = true;
+        state.items[productId].quantity = 1;
+        state.totalQuantity += 1;
       }
-
-      state.items[productId].isClicked = true;
-      state.items[productId].quantity = 1;
-      state.totalQuantity += 1;
     },
     reduceQuantity: (state, action) => {
       const productId = action.payload;
