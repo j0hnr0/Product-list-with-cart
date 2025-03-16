@@ -24,10 +24,10 @@ export default function CartContent() {
                         {product.quantity}x
                       </h3>
                       <h3 className="font-red-hat-regular text-sm text-custom-brown">
-                        @ $5.50
+                        @ ${product.price.toFixed(2)}
                       </h3>
                       <h3 className="font-red-hat-semibold font-semibold text-sm text-custom-brown">
-                        $5.50
+                        ${product.totalPrice.toFixed(2)}
                       </h3>
                     </div>
                   </div>

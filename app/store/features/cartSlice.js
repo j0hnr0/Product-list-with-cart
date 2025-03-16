@@ -8,34 +8,34 @@ const cartSlice = createSlice({
   },
   reducers: {
     buyProduct: (state, action) => {
-      const productId = action.payload;
+      const { id, price } = action.payload;
 
-      if (
-        state.items[productId] === undefined ||
-        state.items[productId].quantity === 0
-      ) {
-        state.items[productId] = {};
-        state.items[productId].isClicked = true;
-        state.items[productId].quantity = 1;
+      if (state.items[id] === undefined || state.items[id].quantity === 0) {
+        state.items[id] = {};
+        state.items[id].isClicked = true;
+        state.items[id].quantity = 1;
+        state.items[id].price = price;
+        state.items[id].totalPrice = price;
         state.totalQuantity += 1;
       }
     },
     reduceQuantity: (state, action) => {
-      const productId = action.payload;
+      const id = action.payload;
 
-      if (state.items[productId].quantity > 0) {
-        state.items[productId].quantity -= 1;
+      if (state.items[id].quantity > 0) {
+        state.items[id].quantity -= 1;
         state.totalQuantity -= 1;
       }
 
-      if (state.items[productId].quantity === 0) {
-        state.items[productId].isClicked = false;
+      if (state.items[id].quantity === 0) {
+        state.items[id].isClicked = false;
       }
     },
     addQuantity: (state, action) => {
-      const productId = action.payload;
+      const id = action.payload;
 
-      state.items[productId].quantity += 1;
+      state.items[id].quantity += 1;
+      state.items[id].totalPrice = state.items[id].price * state.items[id].quantity;
       state.totalQuantity += 1;
     },
   },
