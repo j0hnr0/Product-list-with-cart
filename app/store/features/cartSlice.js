@@ -5,6 +5,7 @@ const cartSlice = createSlice({
   initialState: {
     items: {},
     totalQuantity: 0,
+    orderTotal: 0,
   },
   reducers: {
     buyProduct: (state, action) => {
@@ -16,6 +17,7 @@ const cartSlice = createSlice({
         state.items[id].quantity = 1;
         state.items[id].price = price;
         state.items[id].totalPrice = price;
+        state.orderTotal += price;
         state.totalQuantity += 1;
       }
     },
@@ -24,6 +26,8 @@ const cartSlice = createSlice({
 
       if (state.items[id].quantity > 0) {
         state.items[id].quantity -= 1;
+        state.items[id].totalPrice = state.items[id].price * state.items[id].quantity;
+        state.orderTotal -= state.items[id].price;
         state.totalQuantity -= 1;
       }
 
@@ -36,6 +40,7 @@ const cartSlice = createSlice({
 
       state.items[id].quantity += 1;
       state.items[id].totalPrice = state.items[id].price * state.items[id].quantity;
+      state.orderTotal += state.items[id].price;
       state.totalQuantity += 1;
     },
   },

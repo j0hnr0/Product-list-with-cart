@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 export default function CartContent() {
   const productObject = useSelector((state) => state.cart.items);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const orderTotal = useSelector((state) => state.cart.orderTotal);
 
   return (
     <div>
@@ -60,7 +61,7 @@ export default function CartContent() {
               Order Total
             </h3>
             <h1 className="font-red-hat-bold font-bold text-2xl text-custom-black">
-              $46.50
+              ${orderTotal.toFixed(2)}
             </h1>
           </div>
 
