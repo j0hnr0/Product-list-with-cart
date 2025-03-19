@@ -1,5 +1,12 @@
 "use client";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { useSelector } from "react-redux";
 
 export default function CartContent() {
@@ -87,15 +94,23 @@ export default function CartContent() {
               This is a <b>carbon-neutral</b> delivery.
             </h3>
           </div>
-
-          <button
-            type="button"
-            className="mt-6 w-full rounded-full py-4 text-center bg-custom-red cursor-pointer"
-          >
-            <h3 className="font-red-hat-semibold font-semibold text-base text-white">
-              Confirm Order
-            </h3>
-          </button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <button
+                type="button"
+                className="mt-6 w-full rounded-full py-4 text-center bg-custom-red cursor-pointer"
+              >
+                <h3 className="font-red-hat-semibold font-semibold text-base text-white">
+                  Confirm Order
+                </h3>
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-[592px] bg-white rounded-[12px] p-10">
+              <DialogHeader>
+                <DialogTitle className="font-red-hat-bold font-bold text-[40px] text-custom-black">Order Confirmed</DialogTitle>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
       )}
     </div>
