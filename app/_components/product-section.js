@@ -38,6 +38,7 @@ export default function ProductSection() {
               key={item.name}
               id={item.name}
               imageURL={item.image.desktop}
+              imageThumbnail={item.image.thumbnail}
               category={item.category}
               name={item.name}
               price={item.price}

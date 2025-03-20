@@ -10,7 +10,7 @@ import {
   addQuantity,
 } from "../store/features/cartSlice";
 
-export default function Product({ id, imageURL, category, name, price, alt }) {
+export default function Product({ id, imageURL, imageThumbnail, category, name, price, alt }) {
   const dispatch = useDispatch();
 
   const productInCart = useSelector((state) => state.cart.items[id]);
@@ -34,7 +34,7 @@ export default function Product({ id, imageURL, category, name, price, alt }) {
         <AddToCartButton
           isClicked={isClicked}
           quantity={quantity}
-          buyProduct={() => dispatch(buyProduct({ id, price }))}
+          buyProduct={() => dispatch(buyProduct({ id, price, imageThumbnail }))}
           reduceQuantity={() => dispatch(reduceQuantity(id))}
           addQuantity={() => dispatch(addQuantity(id))}
         />

@@ -18,9 +18,9 @@ export default function ModalContent() {
                 <div className="mt-4 flex justify-between items-center">
                   <div className="flex justify-start items-center gap-4">
                     <Image
-                      src="/images/image-tiramisu-thumbnail.jpg"
+                      src={product.thumbnail}
                       className="w-full max-w-12 rounded-sm"
-                      alt="foods"
+                      alt={productId}
                       width={48}
                       height={48}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

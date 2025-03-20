@@ -9,10 +9,11 @@ const cartSlice = createSlice({
   },
   reducers: {
     buyProduct: (state, action) => {
-      const { id, price } = action.payload;
+      const { id, price, imageThumbnail } = action.payload;
 
       if (state.items[id] === undefined || state.items[id].quantity === 0) {
         state.items[id] = {};
+        state.items[id].thumbnail = imageThumbnail;
         state.items[id].isClicked = true;
         state.items[id].quantity = 1;
         state.items[id].price = price;
