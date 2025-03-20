@@ -58,7 +58,102 @@ export default function Modal() {
                 height={48}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
+
+              <div>
+                <h5 className="text-custom-black font-red-hat-semibold font-semibold text-sm">
+                  Classic Tiramisu
+                </h5>
+                <div className="mt-2 flex justify-start items-start gap-2">
+                  <h5 className="text-custom-red font-red-hat-semibold font-semibold text-sm">
+                    1x
+                  </h5>
+                  <h5 className="text-custom-brown font-red-hat-regular text-sm">
+                    @ $5.50
+                  </h5>
+                </div>
+              </div>
             </div>
+
+            <h4 className="font-red-hat-semibold font-semibold text-base text-custom-black">
+              $5.50
+            </h4>
+          </div>
+
+          <hr className="mt-4 h-[1px] w-full bg-custom-white" />
+
+          <div className="mt-4 flex justify-between items-center">
+            <div className="flex justify-start items-center gap-4">
+              <Image
+                src="/images/image-tiramisu-thumbnail.jpg"
+                className="w-full max-w-12 rounded-sm"
+                alt="foods"
+                width={48}
+                height={48}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+
+              <div>
+                <h5 className="text-custom-black font-red-hat-semibold font-semibold text-sm">
+                  Classic Tiramisu
+                </h5>
+                <div className="mt-2 flex justify-start items-start gap-2">
+                  <h5 className="text-custom-red font-red-hat-semibold font-semibold text-sm">
+                    1x
+                  </h5>
+                  <h5 className="text-custom-brown font-red-hat-regular text-sm">
+                    @ $5.50
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <h4 className="font-red-hat-semibold font-semibold text-base text-custom-black">
+              $5.50
+            </h4>
+          </div>
+
+          <hr className="mt-4 h-[1px] w-full bg-custom-white" />
+
+          <div className="mt-4 flex justify-between items-center">
+            <div className="flex justify-start items-center gap-4">
+              <Image
+                src="/images/image-tiramisu-thumbnail.jpg"
+                className="w-full max-w-12 rounded-sm"
+                alt="foods"
+                width={48}
+                height={48}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+
+              <div>
+                <h5 className="text-custom-black font-red-hat-semibold font-semibold text-sm">
+                  Classic Tiramisu
+                </h5>
+                <div className="mt-2 flex justify-start items-start gap-2">
+                  <h5 className="text-custom-red font-red-hat-semibold font-semibold text-sm">
+                    1x
+                  </h5>
+                  <h5 className="text-custom-brown font-red-hat-regular text-sm">
+                    @ $5.50
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <h4 className="font-red-hat-semibold font-semibold text-base text-custom-black">
+              $5.50
+            </h4>
+          </div>
+
+          <hr className="mt-6 h-[1px] w-full bg-custom-white" />
+
+          <div className="mt-6 flex justify-between items-center">
+            <h5 className="font-red-hat-regular text-sm text-custom-black">
+              Order Total
+            </h5>
+            <h3 className="text-custom-black font-red-hat-bold font-bold text-2xl">
+              $46.50
+            </h3>
           </div>
         </div>
       </DialogContent>
