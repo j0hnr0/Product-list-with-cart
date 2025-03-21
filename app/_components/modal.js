@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Dialog,
   DialogContent,
@@ -7,8 +9,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import ModalContent from "./modal-content";
+import { useDispatch } from "react-redux";
+import { startNewOrder } from "../store/features/cartSlice";
 
 export default function Modal() {
+  const dispatch = useDispatch();
+
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -51,7 +58,8 @@ export default function Modal() {
 
         <button
           type="button"
-          className="mt-8 w-full rounded-full text-center py-4 bg-custom-red"
+          className="mt-8 w-full rounded-full text-center py-4 bg-custom-red cursor-pointer"
+          onClick={() => dispatch(startNewOrder())}
         >
           <h4 className="text-white font-red-hat-semibold font-semibold text-base">
             Start New Order

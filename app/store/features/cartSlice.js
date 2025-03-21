@@ -27,7 +27,8 @@ const cartSlice = createSlice({
 
       if (state.items[id].quantity > 0) {
         state.items[id].quantity -= 1;
-        state.items[id].totalPrice = state.items[id].price * state.items[id].quantity;
+        state.items[id].totalPrice =
+          state.items[id].price * state.items[id].quantity;
         state.orderTotal -= state.items[id].price;
         state.totalQuantity -= 1;
       }
@@ -40,12 +41,35 @@ const cartSlice = createSlice({
       const id = action.payload;
 
       state.items[id].quantity += 1;
-      state.items[id].totalPrice = state.items[id].price * state.items[id].quantity;
+      state.items[id].totalPrice =
+        state.items[id].price * state.items[id].quantity;
       state.orderTotal += state.items[id].price;
       state.totalQuantity += 1;
+    },
+    startNewOrder: (state, action) => {
+      const keys = Object.keys(state.items);
+
+      if (keys.length > 0) {
+        keys.forEach((key) => {
+          state.items[key].quantity = 0;
+          state.items[key].isClicked = false;
+        });
+
+        state.totalQuantity = 0;
+        state.orderTotal = 0;
+      }
+    },
+    removeProduct: (state, action) => {
+      const { productId } = action.payload;
     },
   },
 });
 
-export const { buyProduct, reduceQuantity, addQuantity } = cartSlice.actions;
+export const {
+  buyProduct,
+  reduceQuantity,
+  addQuantity,
+  startNewOrder,
+  removeProduct,
+} = cartSlice.actions;
 export default cartSlice.reducer;

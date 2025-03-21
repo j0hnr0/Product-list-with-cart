@@ -1,9 +1,12 @@
 "use client";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Modal from "./modal";
+import { removeProduct } from "../store/features/cartSlice";
 
 export default function CartContent() {
+  const dispatch = useDispatch();
+
   const productObject = useSelector((state) => state.cart.items);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const orderTotal = useSelector((state) => state.cart.orderTotal);
@@ -34,7 +37,11 @@ export default function CartContent() {
                     </div>
                   </div>
 
-                  <div className="group flex justify-center items-center rounded-full bg-transparent hover:border-custom-black border-[1px] border-custom-gray w-5 h-5 cursor-pointer">
+                  <button
+                    type="button"
+                    className="group flex justify-center items-center rounded-full bg-transparent hover:border-custom-black border-[1px] border-custom-gray w-5 h-5 cursor-pointer"
+                    onClick={() => dispatch(removeProduct({ productId }))}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="10"
@@ -47,7 +54,7 @@ export default function CartContent() {
                         d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
                       />
                     </svg>
-                  </div>
+                  </button>
                 </div>
 
                 <hr className="w-full h-[1px] border-custom-white2 mt-4" />
