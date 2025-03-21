@@ -61,6 +61,11 @@ const cartSlice = createSlice({
     },
     removeProduct: (state, action) => {
       const { productId } = action.payload;
+
+      state.totalQuantity -= state.items[productId].quantity;
+      state.orderTotal -= state.items[productId].totalPrice;
+      state.items[productId].quantity = 0;
+      state.items[productId].isClicked = false;
     },
   },
 });
