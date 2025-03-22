@@ -18,11 +18,11 @@ export default function Product({ id, imageURL, imageThumbnail, category, name, 
   const quantity = productInCart ? productInCart.quantity : 0;
 
   return (
-    <div className="flex-1 min-w-[250px]">
+    <div className="flex-1 min-w-[250px] max-1191:min-w-[200px] max-1001:max-w-[213px]">
       <div className="relative">
         <Image
           src={imageURL}
-          className={clsx(`rounded-lg w-full h-auto max-1216:max-w-[250px] max-1191:max-w-none`, {
+          className={clsx(`rounded-lg w-full h-auto max-w-[250px]`, {
             "border-[2px] border-custom-red": isClicked === true,
             "border-0 border-transparent": isClicked === false,
           })}

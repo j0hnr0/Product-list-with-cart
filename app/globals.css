@@ -14,7 +14,8 @@
     --color-custom-white: #F5EEEC;
 
     --breakpoint-1216: 1216px;
-    --breakpoint-1191: 1191px
+    --breakpoint-1191: 1191px;
+    --breakpoint-1001: 1001px;
 }
 
 .font-red-hat-bold {
