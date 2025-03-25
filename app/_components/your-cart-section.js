@@ -8,8 +8,9 @@ export default function YourCartSection() {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   return (
-    <section className="w-full flex justify-end border-[1px] border-red-500
-    max-1001:mt-8">
+    <section className="w-full flex justify-end
+    max-1001:mt-8
+    max-649:px-5">
       
       <div className="w-full max-w-96 bg-white rounded-xl p-6 pb-10
       max-1001:max-w-none">

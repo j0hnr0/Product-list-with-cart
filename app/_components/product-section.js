@@ -18,7 +18,8 @@ export default function ProductSection() {
   });
 
   return (
-    <section className="max-w-[800px] border-[1px] border-red-500">
+    <section className="max-w-[800px]
+    max-649:px-5">
       <h1 className="text-[40px] font-bold font-red-hat-bold">Desserts</h1>
       {isLoading && (
         <div className="flex justify-center">
@@ -32,7 +33,8 @@ export default function ProductSection() {
       )}
 
       {data && (
-        <div className="mt-8 flex gap-6 flex-wrap">
+        <div className="mt-8 flex gap-6 flex-wrap 
+        max-649:justify-center">
           {data.map((item) => (
             <Product
               key={item.name}

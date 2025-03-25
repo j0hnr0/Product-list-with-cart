@@ -28,9 +28,11 @@ export default function Modal() {
           </h3>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-[592px] bg-white rounded-[12px] p-10">
+      <DialogContent className="max-w-[592px] bg-white rounded-[12px] p-10
+      max-465:px-5">
         <DialogHeader>
-          <DialogTitle className="font-red-hat-bold font-bold text-[40px] text-custom-black">
+          <DialogTitle className="font-red-hat-bold font-bold text-[40px] text-custom-black
+          max-465:text-start">
             <svg
               width="42"
               height="42"
@@ -49,7 +51,8 @@ export default function Modal() {
             </svg>
             Order Confirmed
           </DialogTitle>
-          <DialogDescription className="font-red-hat-regular text-base text-custom-brown">
+          <DialogDescription className="font-red-hat-regular text-base text-custom-brown
+          max-465:text-start">
             We hope you enjoy your food!
           </DialogDescription>
         </DialogHeader>

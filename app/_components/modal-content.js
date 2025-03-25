@@ -16,7 +16,7 @@ export default function ModalContent() {
             product.quantity > 0 && (
               <div key={productId}>
                 <div className="mt-4 flex justify-between items-center">
-                  <div className="flex justify-start items-center gap-4">
+                  <div className="flex justify-start items-center gap-4 border-[1px] border-red-500">
                     <Image
                       src={product.thumbnail}
                       className="w-full max-w-12 rounded-sm"
