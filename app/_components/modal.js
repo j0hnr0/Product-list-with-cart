@@ -28,7 +28,7 @@ export default function Modal() {
           </h3>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-[592px] bg-white rounded-[12px] p-10
+      <DialogContent className="max-w-[592px] bg-white rounded-[12px] p-10 max-465:max-h-screen max-465:overflow-y-auto
       max-465:px-5">
         <DialogHeader>
           <DialogTitle className="font-red-hat-bold font-bold text-[40px] text-custom-black
